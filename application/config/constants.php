@@ -83,3 +83,21 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+//This is for SMTP
+define('FROM_EMAIL', "noreply@officetours.com");
+define('FROM_NAME', "Test Codeigniter 3");
+define('SMTP_PROTOCOL', "smtp");
+define('SMTP_HOST', "ssl://mail.officetours.com");
+define('SMTP_PORT', "465");
+define('SMTP_USERNAME', "noreply@officetours.com");
+define('SMTP_PASS', "jkpd?!?yur");
+
+//This is for User staus
+define('ACTIVE', 1);
+define('INACTIVE', 0);
+define('DELETED', -1);
+
+//This is for user role
+define('ROLE_ADMIN', 'Admin');
+define('ROLE_USER', 'User');
