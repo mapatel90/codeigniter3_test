@@ -85,13 +85,13 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 //This is for SMTP
-define('FROM_EMAIL', "palladiumhub17@gmail.com");
+define('FROM_EMAIL', "***@gmail.com");
 define('FROM_NAME', "Codeigniter 3");
 define('SMTP_PROTOCOL', "smtp");
 define('SMTP_HOST', "smtp.gmail.com");
 define('SMTP_PORT', "465");
-define('SMTP_USERNAME', "palladiumhub17@gmail.com");
-define('SMTP_PASS', "Testing@123");
+define('SMTP_USERNAME', "***@gmail.com");
+define('SMTP_PASS', "***");
 
 //This is for User staus
 define('ACTIVE', 1);
