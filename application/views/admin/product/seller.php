@@ -1,8 +1,11 @@
 <div class="container">
 <div class="row my-4">   
-    <div class="col-2">
+    <div class="col-6">
         <a href="<?php echo base_url('logout'); ?>" class="btn btn-info" />Logout</a>
     </div>   
+    <div class="col-6">
+        <a href="<?php echo base_url('admin/dashboard'); ?>" class="btn btn-info" style="float:right;" />Back</a>
+    </div>
 </div>   
 <div class="row my-4">
   
@@ -19,12 +22,14 @@
                       <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Seller Name</th>
+                            <th scope="col">Product</th>
                             <th scope="col">Image</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
                             <th scope="col">Status</th>
                             <th scope="col">Date</th>
-                            <th scope="col">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -47,6 +52,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         test.product.initialize();
+        test.product.load_user_product_seller('<?php echo $id; ?>');
     });
 </script>
 

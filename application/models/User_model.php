@@ -72,6 +72,20 @@ class User_model extends CI_Model {
         $result =  $this->db->get();
         return $result->num_rows();
     }
+
+    /*
+    Function to get active users with attached product
+    */
+    public function get_active_users_with_attached_product(){
+        $this->db->select("*");
+        $this->db->from("users");
+        $this->db->join("user_products", "user_products.user_id = users.id", "INNER");
+        $this->db->where("users.status", ACTIVE);
+        $this->db->where("role", ROLE_USER);
+        $this->db->group_by("users.id");
+        $result =  $this->db->get();
+        return $result->num_rows();
+    }
     
 	
 }

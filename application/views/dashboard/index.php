@@ -22,9 +22,10 @@
                             <th scope="col">ID</th>
                             <th scope="col">Title</th>
                             <th scope="col">Image</th>
-                            <th scope="col">Status</th>
+                            
                             <th scope="col">Quantity</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Date</th>
                         </tr>
                       </thead>
@@ -87,6 +88,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         test.product.initialize();
+        test.product.load_user_product_list();
 
         $("#btnAttachProduct").on("click", function(){
           $("#attachProductModal").modal("show");

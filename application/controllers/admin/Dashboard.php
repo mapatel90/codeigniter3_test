@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller {
             parent::__construct();
             // Your own constructor code
             $this->load->model("User_model");
+            $this->load->model("Product_model");
     }
 
 	public function index()
@@ -19,15 +20,34 @@ class Dashboard extends CI_Controller {
                         redirect(base_url('sign_in'));
                         exit;
                 } else if(isset($this->session->userdata['role']) && $this->session->userdata['role'] == ROLE_USER){
-                        echo "Test";exit;
                         redirect(base_url('sign_in'));
                         exit;
                 }
                 //This is to get active users
                 $data = array();
                 
+                //This is to get active users
                 $active_users = $this->User_model->get_active_users();
                 $data['active_users'] = $active_users;
+
+                //This is to get active user with attached product
+                $active_users_with_attached_product = $this->User_model->get_active_users_with_attached_product();
+                $data['active_users_with_attached_product'] = $active_users_with_attached_product;
+
+                //This is to get active products
+                $active_products = $this->Product_model->get_active_product_list(true);
+                $data['active_products'] = $active_products;
+
+                $active_products_without_users = $this->Product_model->get_active_product_without_user_attach(true);
+                $data['active_products_without_users'] = $active_products_without_users;
+
+                //This is to get amount of active product
+                $amount_of_active_product = $this->Product_model->get_amount_of_active_products();
+                $data['amount_of_active_product'] = $amount_of_active_product;
+
+                $total_price_of_active_product = $this->Product_model->get_total_price_of_active_products();
+                $data['total_price_of_active_product'] = $total_price_of_active_product;
+                
 
                 $this->load->view('header');
                 $this->load->view('admin/dashboard/index', $data);

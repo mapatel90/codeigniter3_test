@@ -15,34 +15,48 @@
   </div>
   <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
       <div class="card border">
-          <h5 class="card-header">Revenue</h5>
+          <h5 class="card-header">Active User with Attach Product</h5>
           <div class="card-body">
-            <h5 class="card-title">$2.4k</h5>
-            <p class="card-text">Feb 1 - Apr 1, United States</p>
-            <p class="card-text text-success">4.6% increase since last month</p>
+            <h5 class="card-title"><?php echo isset($active_users_with_attached_product)?$active_users_with_attached_product:0; ?></h5>
           </div>
         </div>
   </div>
   <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
       <div class="card">
-          <h5 class="card-header">Purchases</h5>
+          <h5 class="card-header">Active Product</h5>
           <div class="card-body">
-            <h5 class="card-title">43</h5>
-            <p class="card-text">Feb 1 - Apr 1, United States</p>
-            <p class="card-text text-danger">2.6% decrease since last month</p>
-          </div>
-        </div>>
-  </div>
-  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-      <div class="card">
-          <h5 class="card-header">Traffic</h5>
-          <div class="card-body">
-            <h5 class="card-title">64k</h5>
-            <p class="card-text">Feb 1 - Apr 1, United States</p>
-            <p class="card-text text-success">2.5% increase since last month</p>
+            <h5 class="card-title"><?php echo isset($active_products)?$active_products:0; ?></h5>
           </div>
         </div>
   </div>
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+      <div class="card">
+          <h5 class="card-header">Active Product without User Attached</h5>
+          <div class="card-body">
+            <h5 class="card-title"><?php echo isset($active_products_without_users)?$active_products_without_users:0; ?></h5>
+          </div>
+        </div>
+  </div>
+
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+      <div class="card">
+          <h5 class="card-header">Amount of all active attached products</h5>
+          <div class="card-body">
+            <h5 class="card-title"><?php echo isset($amount_of_active_product)?$amount_of_active_product:0; ?></h5>
+          </div>
+        </div>
+  </div>
+
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+      <div class="card">
+          <h5 class="card-header">Summarized price of all active attached products</h5>
+          <div class="card-body">
+            <h5 class="card-title"><?php echo isset($total_price_of_active_product)?'$'.$total_price_of_active_product:0; ?></h5>
+          </div>
+        </div>
+  </div>
+
+  
 </div>
 
   
@@ -84,6 +98,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         test.product.initialize();
+        test.product.load_user_product_list();
     });
 </script>
 

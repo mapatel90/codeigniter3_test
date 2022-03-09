@@ -46,19 +46,7 @@ class User extends CI_Controller {
             
             
             $this->load->library('email');
-
-            $config['protocol'] = SMTP_PROTOCOL;
-			$config['smtp_host'] = SMTP_HOST;
-			$config['smtp_port'] = SMTP_PORT;
-			$config['smtp_user'] = SMTP_USERNAME;
-			$config['smtp_pass'] = SMTP_PASS;
-			$config['mailpath'] = '/usr/sbin/sendmail';
-			$config['charset'] = 'utf-8';
-			$config['mailtype'] = 'html';
-			$config['wordwrap'] = TRUE;
-			//$this->load->library('email', $config);
-			$this->email->initialize($config);
-
+            
 			$this->email->from(FROM_EMAIL, FROM_NAME);
 			$this->email->to($email);
 			$this->email->subject("Verify your email address to Test Codeigniter 3");
@@ -67,7 +55,7 @@ class User extends CI_Controller {
 			$message_email = '<p>Hi '.$username.' ,</p>';
 			$message_email .= '<p>Please click on below link to verify <a href="'.$url.'">Click Here</a></p>';
 			$this->email->message($message_email);
-            $is_send = $this->email->send();
+            $is_send = $this->email->send(true);
 
             if($result){
                 $response['status'] = 1;
