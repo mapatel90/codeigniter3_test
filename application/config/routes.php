@@ -59,8 +59,6 @@ $route['sign_in'] = "User/sign_in";
 $route['logout'] = "User/logout";
 
 $route['dashboard'] = "Dashboard/index";
-$route['attach_product'] = "Dashboard/attach_product";
-
 
 //This is for admin
 $route['admin/dashboard'] = "Admin/Dashboard/index";
